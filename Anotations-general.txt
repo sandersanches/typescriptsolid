@@ -1,0 +1,7 @@
+atualizações de pacotes:
+  no curso ensinou utilizar o comando <<<npx npm-check -u>>> para verificar pacotes desatualizado e atualiza-los, mas este comando não funcionou no meu projeto.
+
+  O comando utilizado foi:
+    npm outdates                  // verifica quais pacotes estão desatualizados
+    npm update @types/node        // comando para atulizar apenas um unico pacote, no meu caso @types/node
+    npm update                    // comando para atulizar todos os pacote

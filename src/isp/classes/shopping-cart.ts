@@ -1,25 +1,26 @@
 import { Discount } from './discount';
-import ICartItens from './interfaces/cart-itens';
+import CartItensProtocol from './interfaces/cart-itens';
+import ShoppingCartProtocols from './interfaces/shopping-cart-protocol';
 
-export default class ShoppingCart {
-  private readonly _itens: ICartItens[] = [];
+export default class ShoppingCart implements ShoppingCartProtocols {
+  private readonly _items: CartItensProtocol[] = [];
 
   constructor(private readonly discount: Discount) {}
 
-  addItens(item: ICartItens) {
-    this._itens.push(item);
+  addItens(item: CartItensProtocol) {
+    this._items.push(item);
   }
 
   removeItem(index: number) {
-    this._itens.splice(index, 1);
+    this._items.splice(index, 1);
   }
 
-  get itens(): ICartItens[] {
-    return this._itens;
+  get items(): CartItensProtocol[] {
+    return this._items;
   }
 
   total(): number {
-    return +this._itens.reduce((sum, item) => sum + item.price, 0).toFixed(2);
+    return +this._items.reduce((sum, item) => sum + item.price, 0).toFixed(2);
   }
 
   totalWithDiscount(): number {
@@ -28,6 +29,6 @@ export default class ShoppingCart {
 
   clear() {
     console.log('O carrinho de compras foi limpo');
-    this._itens.length = 0;
+    this._items.length = 0;
   }
 }

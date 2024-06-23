@@ -1,17 +1,17 @@
 import OrderStatus from './interfaces/order-status';
-import { CustomerOrderprotocol } from './interfaces/costumer-protocol';
-import ShoppingCartProtocols from './interfaces/shopping-cart-protocol';
-import MessagingProtocol from '../services/interfaces/messaging-protocol';
-import PersistencyProtocol from '../services/interfaces/persistency-protocol';
+import ShoppingCart from './shopping-cart';
+import Messaging from '../services/messaging';
+import Persistency from '../services/persistency';
+import { ICustomerOrder } from './interfaces/costumer-protocol';
 
 export default class Order {
   private _orderStatus: OrderStatus = 'opened';
 
   constructor(
-    private readonly cart: ShoppingCartProtocols,
-    private readonly messaging: MessagingProtocol,
-    private readonly persistency: PersistencyProtocol,
-    private readonly custumer: CustomerOrderprotocol,
+    private readonly cart: ShoppingCart,
+    private readonly messaging: Messaging,
+    private readonly persistency: Persistency,
+    private readonly custumer: ICustomerOrder,
   ) {}
 
   get orderStatus(): 'opened' | 'closed' {
@@ -35,6 +35,6 @@ export default class Order {
   }
 
   private isEmpty(): boolean {
-    return this.cart.items.length === 0;
+    return this.cart.itens.length === 0;
   }
 }

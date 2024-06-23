@@ -1,15 +1,15 @@
-export interface CustomerOrderprotocol {
+export interface ICustomerOrder {
   getName(): string;
   getIDN(): string;
 }
 
-export interface IndividualCustumerProtocol {
+export interface IIndividualCustumerProtocol {
   firstName: string;
   lastName: string;
   cpf: string;
 }
 
-export interface EnterpriseCustumerProtocol {
+export interface IEnterpriseCustumerProtocol {
   name: string;
   cnpj: string;
 }

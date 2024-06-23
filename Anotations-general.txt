@@ -9,18 +9,24 @@ atualizações de pacotes:
 
 
 Organização das pastas:
-  0-Legacy    //Codigo legado sem aplicação dos princípios
+  0-Legacy    // Codigo legado sem aplicação dos princípios
 
-  1-srp       //Single Responsbility Principle - Princípio da responsabilidade unica
-    Separação do código em várias classes com apenas as funções que lhe cabem
+  1-srp       // Single Responsbility Principle - Princípio da responsabilidade unica
+              // Separação do código em várias classes com apenas as funções que lhe cabem
 
-  2-ocp       //Open/close principle - Princípio aberto e fechado
-    Entidades devem estar abertas para extensões, mas fechadas para modificações
+  2-ocp       // Open/close principle - Princípio aberto e fechado
+              // Entidades devem estar abertas para extensões, mas fechadas para modificações
 
-  3-lsp       //Liskov Substituition Principles - Pricípio da substituição de Liskov
-    Subtipos precisam de ser subtituíveis por seus tipos de base
-    ex.: Se meu programa espera um animal, algo do tipo cachorro (herdeiro de anima) deve servir, ou qualquer outro tipo de animal.
-    // Não teve desenvolvimento na aula de lsp
+  3-lsp       // Liskov Substituition Principles - Pricípio da substituição de Liskov
+              // Subtipos precisam de ser subtituíveis por seus tipos de base
+              // ex.: Se meu programa espera um animal, algo do tipo cachorro (herdeiro de anima) deve servir, ou qualquer outro tipo de animal.
+              // Não teve desenvolvimento na aula de lsp
 
   4-isp       //Interface Segregation Principle - Princípio de segregação de interface
               //Os clientes não devem depender das interfaces ou membros que não utilizam
+
+  5-dip       // Módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações.
+              // Dependa de abstrações não de implementações.
+              // Abstrações não devem depender de detalhes. Detalhes devem depender de abstrações.
+              // Classes de baixo nível são classes que executam tarefas(os detalhes)
+              // Classes de alto nível são classes que gerenciam as classes de baixo nível
